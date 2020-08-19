@@ -1,0 +1,36 @@
+Name: Hasibullah Mahmood
+Student ID NO: 160709073
+Homework NO: 1
+
+Apriori is an algorithm for frequent item set mining and association rule learning over relational databases.
+It proceeds by identifying the frequent individual items in the database and extending them to larger and larger
+item sets as long as those item sets appear sufficiently often in the database. Wikipedia
+
+The algorithm is implemented in Java programming language line by line using pseudocode from Bing Liu Book.
+ArrayList and HashMap data structures are used in implementation.
+
+Method Name #1:	main(String[] args)
+Description: 	Accepts two arguments(MinSupport and FilePath) as input from CMD, runs Apriori Algorithm and prints all frequent item sets.
+
+Method Name #2: readFile(String path)
+Description: 	Accepts one argument(filePath), reads transactions line by line, removes spaces and split items by comma and returns Transactions as ArrayList.
+
+Method Name #3:	runApriori(ArrayList<ArrayList<String>> Transactions, double minSup)
+Description: 	Accepts two arguments(Transactions and MinSupport), using initPass method it gains all items and its frequents
+		if item support is greater than MinSup adds it to f1, then f1 to F, generates new candidates, counts candidate repetition in transactions
+		add candidates to FK if their actual support is greater than MinSupport and finally returns frequent item sets as HashMap(Key, value).
+
+Method Name #4:	initPass(ArrayList<ArrayList<String>> Transactions)
+Description:  	Accepts transactions as argument, iterates each item, if item does not contain in HashMap add it, else counts item's repetition
+		and finally returns each item with it's frequent
+
+Method Name #5: candidateGen(HashMap<ArrayList<String>, Double> FK_1)
+Description: 	Accepts one argument(fk-1), sort keys(items) in ascending order, checks if last element of both list are different, 
+		then checks if rest of elements in both lists are equal, if true joins f1 and f2, checks the subset of new candidate in fk-1,
+		if true adds it to CK and return it.
+
+Most probably there is no bug in the program and it will run fine.
+
+Sample input and output file is provided, the program can be executed using the command:
+javac Apriori.java
+java Apriori 0.3 data.txt

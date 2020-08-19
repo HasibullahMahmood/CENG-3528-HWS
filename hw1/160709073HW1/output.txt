@@ -1,0 +1,4 @@
+f1:  {[Clothes]=3.0, [Chicken]=5.0, [Cheese]=4.0, [Beef]=4.0, [Milk]=4.0}
+f2:  {[Beef, Chicken]=3.0, [Clothes, Milk]=3.0, [Chicken, Milk]=4.0, [Beef, Cheese]=3.0, [Chicken, Clothes]=3.0}
+f3:  {[Chicken, Clothes, Milk]=3.0}
+f4:  {}
